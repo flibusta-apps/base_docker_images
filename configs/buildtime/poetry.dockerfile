@@ -7,3 +7,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install wheel poetry --no-cache-dir
+
+ENV VENV_PATH=/opt/venv
+
+RUN python -m venv $VENV_PATH
