@@ -42,7 +42,7 @@ jobs:
       -
         name: Build and push [Poetry] [Buildtime]
         id: docker_build_poetry_buildtime
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         env:
           IMAGE: ${{ steps.repository_name.outputs.lowercase }}
         with:
@@ -56,7 +56,7 @@ jobs:
       -
         name: Build and push [PostgreSQL, Poetry, Asyncpg] [Buildtime]
         id: docker_build_postgres_asyncpg_poetry_buildtime
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         env:
           IMAGE: ${{ steps.repository_name.outputs.lowercase }}
         with:
@@ -70,7 +70,7 @@ jobs:
       -
         name: Build and push [PostgreSQL] [Runtime]
         id: docker_build_postgres_runtime
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         env:
           IMAGE: ${{ steps.repository_name.outputs.lowercase }}
         with:
