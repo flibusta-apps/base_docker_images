@@ -1,9 +1,11 @@
-ARG PYTHON_VERSION
+ARG PYTHON_VERSION_ARG
 
-FROM python:${PYTHON_VERSION}-slim
+
+
+FROM python:${PYTHON_VERSION_ARG}-slim
 
 RUN apt-get update \
-    && apt-get install --no-install-recommends -y gcc build-essential python3-dev curl \
+    && apt-get install --no-install-recommends -y gcc build-essential python${PYTHON_VERSION_ARG}-dev curl \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
