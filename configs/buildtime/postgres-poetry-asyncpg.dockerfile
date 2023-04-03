@@ -3,7 +3,7 @@ ARG PYTHON_VERSION_ARG
 FROM python:${PYTHON_VERSION_ARG}-slim
 
 RUN apt-get update \
-    && apt-get install --no-install-recommends -y gcc build-essential python${PYTHON_VERSION_ARG}-dev libpq-dev libffi-dev curl \
+    && apt-get install --no-install-recommends -y git gcc build-essential python${PYTHON_VERSION_ARG}-dev libpq-dev libffi-dev curl \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
