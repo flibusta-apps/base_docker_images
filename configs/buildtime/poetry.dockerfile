@@ -1,8 +1,8 @@
 ARG PYTHON_VERSION_ARG
 
-
-
 FROM python:${PYTHON_VERSION_ARG}-slim
+
+ENV PYTHON_VERSION_ARG=$PYTHON_VERSION_ARG
 
 RUN apt-get update \
     && apt-get install --no-install-recommends -y gcc build-essential python${PYTHON_VERSION_ARG}-dev curl \
